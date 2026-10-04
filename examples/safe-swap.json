@@ -1,0 +1,78 @@
+{
+  "identity": {
+    "tenant_id": "acme",
+    "agent_id": "portfolio-1",
+    "agent_address": "0x0000000000000000000000000000000000000002",
+    "owner_address": "0x0000000000000000000000000000000000000001",
+    "erc8004_agent_id": 7,
+    "reputation": 90,
+    "verification_score": 10,
+    "validations": [
+      "TEE"
+    ]
+  },
+  "delegation": [
+    {
+      "delegator": "0x0000000000000000000000000000000000000001",
+      "delegatee": "0x0000000000000000000000000000000000000002",
+      "capabilities": [
+        "eth:swap"
+      ],
+      "max_value_wei": 5000000000000000000,
+      "valid_until": 4102444800,
+      "nonce": 1
+    }
+  ],
+  "provenance": [
+    {
+      "source": "user",
+      "trust": "TRUSTED",
+      "labels": []
+    }
+  ],
+  "intent": {
+    "goal": "Convert 5 ETH to USDC",
+    "action": "swap",
+    "token_in": "ETH",
+    "token_out": "USDC",
+    "amount_in": 5000000000000000000,
+    "max_slippage_bps": 50,
+    "recipient": "0x0000000000000000000000000000000000000001",
+    "approved_routers": [
+      "0x0000000000000000000000000000000000000003"
+    ],
+    "forbid_delegatecall": true,
+    "max_new_approval": 5000000000000000000,
+    "max_mev_risk": 40,
+    "max_contract_risk": 40
+  },
+  "transaction": {
+    "chain_id": 1,
+    "sender": "0x0000000000000000000000000000000000000002",
+    "target": "0x0000000000000000000000000000000000000003",
+    "value": 5000000000000000000,
+    "calldata": "0x1234"
+  },
+  "simulation": {
+    "success": true,
+    "decoded_action": "swapExactInput",
+    "decoded_args": {},
+    "asset_flows": [
+      {
+        "asset": "USDC",
+        "sender": "0x0000000000000000000000000000000000000003",
+        "recipient": "0x0000000000000000000000000000000000000001",
+        "amount": 10000000000,
+        "direction": "in"
+      }
+    ],
+    "state_diff": {
+      "approvals": [],
+      "storage_changes": [],
+      "balance_changes": []
+    },
+    "uses_delegatecall": false,
+    "mev_risk": 5,
+    "contract_risk": 5
+  }
+}
